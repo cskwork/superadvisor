@@ -5,7 +5,7 @@
 
 **Purpose:** Merge the PR, wait for CI + deploy, verify production health via single-pass canary. Picks up after `/ship`. Offer revert at every failure.
 
-**superadvisor routes here when:** "merge", "land", "deploy", "merge and verify", "land it", "ship it to production". Korean: "머지해줘", "랜딩", "배포하고 확인", "프로덕션에 올려줘". Args: `/land-and-deploy [#NNN] [<url>]`.
+**superadvisor routes here when:** "merge", "land", "deploy", "merge and verify", "land it", "ship it to production". Args: `/land-and-deploy [#NNN] [<url>]`.
 
 ## Procedure
 Mostly automated; stop only at the listed gates. GitHub only — GitLab/unknown → STOP ("run `/ship` to make the MR, merge via web UI").

@@ -5,7 +5,7 @@
 
 **Purpose:** Safety guardrails for destructive commands. Warn before `rm -rf`, `DROP TABLE`, force-push, `git reset --hard`, `kubectl delete`, and similar; the user can override each warning.
 
-**superadvisor routes here when:** "be careful", "safety mode", "prod mode", "careful mode", "warn before destructive". Also when touching prod, debugging live systems, or working in a shared environment. Korean: "조심해줘", "안전 모드", "위험 명령 경고", "프로덕션 조심".
+**superadvisor routes here when:** "be careful", "safety mode", "prod mode", "careful mode", "warn before destructive". Also when touching prod, debugging live systems, or working in a shared environment.
 
 ## Procedure
 1. Activating turns safety mode ON: every Bash command is checked for destructive patterns BEFORE it runs (a `PreToolUse` Bash hook, `careful/bin/check-careful.sh`).

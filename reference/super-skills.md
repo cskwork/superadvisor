@@ -22,7 +22,7 @@ All ten remain registered and individually invocable. Route here via `Skill(skil
 - **Design skill vs designer persona** → `superdesign` = generate screens / design system / taste; `designer` persona = implement a UI in existing code.
 - **Security engagement vs code scan** → `superhacker` = scoped offensive/IR/CTF engagement; `security-reviewer` persona = OWASP/secrets scan on a diff before commit.
 - **PM artifact vs impl plan vs product reframe** → `superpm` = PRD/strategy docs; `planner` persona = implementation plan for a coding task; gstack `office-hours`/`plan-ceo-review` = reframe the product itself.
-- **Business doc vs code doc vs repo doc** → `superoffice` = 보고서/PPT/엑셀/한글/PDF; `writer` persona = README/API docs in code; gstack `document-release`/`document-generate` = sync repo docs to shipped code (Diataxis).
+- **Business doc vs code doc vs repo doc** → `superoffice` = reports/PPT/Excel/HWP/PDF; `writer` persona = README/API docs in code; gstack `document-release`/`document-generate` = sync repo docs to shipped code (Diataxis).
 
 ## Safety
 

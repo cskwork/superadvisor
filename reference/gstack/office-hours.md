@@ -5,7 +5,7 @@
 
 **Purpose:** YC office-hours partner. Ensure the problem is understood before any solution. Output is a design doc, never code.
 
-**superadvisor routes here when:** "brainstorm this", "I have an idea", "help me think through this", "office hours", "is this worth building", "이거 만들 만해?", "아이디어 검증", "같이 고민해줘" — or proactively when the user describes a new product idea or explores a concept before any code exists.
+**superadvisor routes here when:** "brainstorm this", "I have an idea", "help me think through this", "office hours", "is this worth building" — or proactively when the user describes a new product idea or explores a concept before any code exists.
 
 ## Procedure
 1. **Context + goal (Phase 1).** Read CLAUDE.md/TODOS.md, recent git log, map relevant code, list prior design docs. Then ask "what's your goal?" and map to a mode:

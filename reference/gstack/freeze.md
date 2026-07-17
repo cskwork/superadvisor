@@ -5,7 +5,7 @@
 
 **Purpose:** Lock file edits to one directory for the session; any Edit or Write outside it is blocked, not just warned.
 
-**superadvisor routes here when:** "freeze", "restrict edits", "only edit this folder", "lock down edits", "이 폴더만 수정", "편집 범위 제한" — or when debugging and you want to prevent accidentally "fixing" unrelated code, or scope changes to one module.
+**superadvisor routes here when:** "freeze", "restrict edits", "only edit this folder", "lock down edits" — or when debugging and you want to prevent accidentally "fixing" unrelated code, or scope changes to one module.
 
 ## Procedure
 1. Ask which directory to restrict edits to. Text input, not multiple choice: "Which directory should I restrict edits to? Files outside this path will be blocked from editing."

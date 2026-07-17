@@ -5,7 +5,7 @@
 
 **Purpose:** Sync base branch, run tests, audit coverage, review, bump VERSION, update CHANGELOG, commit, push, open PR. Never push on red.
 
-**superadvisor routes here when:** "ship it", "create a PR", "push to main", "deploy this", "merge and push", "get it deployed", "code is ready". Korean: "배포해줘", "PR 올려줘", "푸시해줘", "이거 올려줘".
+**superadvisor routes here when:** "ship it", "create a PR", "push to main", "deploy this", "merge and push", "get it deployed", "code is ready".
 
 ## Procedure
 Fully automated, non-interactive. `/ship` means DO IT — run straight through, output the PR URL. Re-running re-runs the WHOLE checklist: every verification step (tests, coverage, plan, review, VERSION/CHANGELOG, TODOS) runs every invocation; only actions are idempotent (skip bump if bumped, skip push if pushed, update PR if it exists).
