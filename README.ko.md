@@ -1,5 +1,7 @@
 # superadvisor
 
+**Live:** [cskwork.github.io/superadvisor](https://cskwork.github.io/superadvisor/)
+
 **단일 진입점 라우터 스킬**. 스킬 하나만 부르면 요청을 읽고 가장 적합한 대상 하나를 골라, **그 대상만 로드**한 뒤 넘긴다. [garrytan/gstack](https://github.com/garrytan/gstack)의 라우터 패턴과 cskwork `supergoal`의 방식("`SKILL.md`가 라우터, `reference/`가 절차, 단계에 필요한 것만 로드")을 따른다.
 
 ## 왜
