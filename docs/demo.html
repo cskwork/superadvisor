@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>superadvisor — routing demo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0a08; --ink:#ece7dd; --muted:#9a9384; --faint:#6b6559;
+    --gold:#e3b23c; --coral:#e78a6b; --cyan:#78c2bd;
+    --mono:'JetBrains Mono',ui-monospace,Menlo,monospace; --serif:'Fraunces',Georgia,serif;
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  html,body{height:100%}
+  body{
+    background:var(--bg); color:var(--ink); font-family:var(--mono);
+    display:grid; place-items:center; overflow:hidden;
+    background-image:linear-gradient(rgba(236,231,221,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(236,231,221,.035) 1px,transparent 1px);
+    background-size:44px 44px;
+  }
+  body::before{content:""; position:fixed; inset:0; z-index:-1;
+    background:radial-gradient(55% 45% at 25% 10%,rgba(227,178,60,.12),transparent 70%),radial-gradient(50% 45% at 90% 90%,rgba(120,194,189,.08),transparent 70%)}
+  .stage{width:min(920px,92vw)}
+  .brand{display:flex; align-items:center; gap:11px; font-weight:700; font-size:1rem; margin:0 0 20px 4px; letter-spacing:.01em}
+  .brand svg{width:26px;height:26px} .brand b{color:var(--gold)}
+  .card{border:1px solid rgba(236,231,221,.11); border-radius:16px; background:linear-gradient(180deg,rgba(22,21,15,.75),rgba(10,9,6,.6)); overflow:hidden; box-shadow:0 30px 80px -30px rgba(0,0,0,.7)}
+  .bar{display:flex; align-items:center; gap:8px; padding:14px 18px; border-bottom:1px solid rgba(236,231,221,.08); background:rgba(22,21,15,.6)}
+  .bar i{width:11px;height:11px;border-radius:50%}
+  .bar i:nth-child(1){background:#e0665a} .bar i:nth-child(2){background:#e3b23c} .bar i:nth-child(3){background:#78c2bd}
+  .bar span{margin-left:8px; font-size:.68rem; letter-spacing:.14em; text-transform:uppercase; color:var(--faint)}
+  .body{padding:34px 30px 38px; min-height:230px}
+  .line{font-size:1.18rem; line-height:1.5}
+  .prompt .p{color:var(--gold); font-weight:700}
+  .prompt .req{color:var(--ink)}
+  .caret{display:inline-block; width:9px; height:1.15em; background:var(--gold); vertical-align:-2px; margin-left:2px; animation:blink 1s steps(1) infinite}
+  @keyframes blink{50%{opacity:0}}
+  .status{margin-top:22px; font-size:.82rem; letter-spacing:.16em; text-transform:uppercase; color:var(--faint); height:1.2em; opacity:0; transition:opacity .25s}
+  .route{margin-top:16px; display:flex; align-items:center; gap:14px; opacity:0; transform:translateY(8px); transition:opacity .4s, transform .4s}
+  .route.show{opacity:1; transform:none}
+  .route .tag{font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:var(--faint)}
+  .route .chip{font-family:var(--serif); font-style:italic; font-size:1.7rem; font-weight:400; padding:6px 20px; border-radius:11px; border:1px solid; line-height:1.1}
+  .route .cls{font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; color:var(--muted)}
+  .g .chip{color:var(--gold); border-color:rgba(227,178,60,.5); background:rgba(227,178,60,.08)}
+  .c .chip{color:var(--coral); border-color:rgba(231,138,107,.5); background:rgba(231,138,107,.08)}
+  .y .chip{color:var(--cyan); border-color:rgba(120,194,189,.5); background:rgba(120,194,189,.08)}
+  .foot{margin:22px 4px 0; font-size:.72rem; color:var(--faint); letter-spacing:.06em; display:flex; justify-content:space-between}
+  .foot b{color:var(--muted); font-weight:500}
+</style>
+</head>
+<body>
+  <div class="stage">
+    <div class="brand">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="#e3b23c" stroke-width="2" stroke-linecap="round"><path d="M6 16h6"/><path d="M15 16c6 0 5-8 11-8"/><path d="M15 16h11"/><path d="M15 16c6 0 5 8 11 8"/></g><circle cx="14" cy="16" r="3.2" fill="#e3b23c"/></svg>
+      super<b>advisor</b>
+    </div>
+    <div class="card">
+      <div class="bar"><i></i><i></i><i></i><span>routing</span></div>
+      <div class="body">
+        <div class="line prompt"><span class="p">/superadvisor</span> <span class="req" id="req"></span><span class="caret" id="caret"></span></div>
+        <div class="status" id="status">matching</div>
+        <div class="route" id="route"><span class="tag">route</span><span class="chip" id="chip"></span><span class="cls" id="cls"></span></div>
+      </div>
+    </div>
+    <div class="foot"><span>one front door, dispatched to the right specialist</span><span><b>github.com/cskwork/superadvisor</b></span></div>
+  </div>
+
+<script>
+const items=[
+  {req:"deploy to prod and verify health", chip:"land-and-deploy", cls:"gstack workflow", k:"y"},
+  {req:"review this PR", chip:"code-reviewer", cls:"persona", k:"c"},
+  {req:"design a landing page", chip:"superdesign", cls:"super* skill", k:"g"},
+  {req:"warn me before rm -rf", chip:"careful", cls:"gstack workflow", k:"y"},
+  {req:"help me prep for an interview", chip:"superinterview", cls:"super* skill", k:"g"},
+];
+const req=document.getElementById('req'), caret=document.getElementById('caret'),
+      status=document.getElementById('status'), route=document.getElementById('route'),
+      chip=document.getElementById('chip'), cls=document.getElementById('cls');
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+async function type(t){req.textContent="";for(const ch of t){req.textContent+=ch;await sleep(38+Math.random()*34)}}
+async function cycle(it){
+  route.className="route"; route.classList.remove('show'); status.style.opacity=0; chip.textContent=""; cls.textContent="";
+  caret.style.display="inline-block";
+  await type(it.req); await sleep(360);
+  status.style.opacity=1; await sleep(620);
+  caret.style.display="none"; status.style.opacity=0;
+  chip.textContent=it.chip; cls.textContent=it.cls; route.classList.add(it.k); route.classList.add('show');
+  await sleep(1900);
+}
+(async()=>{let i=0; while(true){await cycle(items[i%items.length]); i++; await sleep(500)}})();
+</script>
+</body>
+</html>
