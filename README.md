@@ -1,5 +1,7 @@
 # superadvisor
 
+**Live:** [cskwork.github.io/superadvisor](https://cskwork.github.io/superadvisor/)
+
 A single front-door **router skill** for the toolkit. You invoke one skill; it reads the request, picks the single best target, loads only that, and hands off. Modeled on [garrytan/gstack](https://github.com/garrytan/gstack)'s router pattern and cskwork's `supergoal` ("`SKILL.md` is the router; `reference/` carries procedure; load only what the phase needs").
 
 ## Why
