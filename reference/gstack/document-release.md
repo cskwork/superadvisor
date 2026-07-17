@@ -5,7 +5,7 @@
 
 **Purpose:** Post-ship documentation update — after `/ship`, before the PR merges: make every doc match what actually shipped, and build a Diataxis coverage map that flags gaps (does not fill them).
 
-**superadvisor routes here when:** "update the docs", "sync documentation", "post-ship docs", "make docs match what shipped", proactively after a PR merges or code ships; Korean: "문서 업데이트", "문서 최신화", "배포 후 문서 정리".
+**superadvisor routes here when:** "update the docs", "sync documentation", "post-ship docs", "make docs match what shipped", proactively after a PR merges or code ships.
 
 ## Procedure
 Mostly automated: make obvious factual updates directly; stop only for risky/subjective calls.

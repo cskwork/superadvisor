@@ -5,7 +5,7 @@
 
 **Purpose:** Full safety mode = `/careful` (destructive-command warnings) + `/freeze` (directory-scoped edits) in a single command. Maximum safety when touching prod or debugging live systems.
 
-**superadvisor routes here when:** "guard mode", "full safety", "lock it down", "maximum safety", "guard against mistakes", "안전 모드", "실수 방지" — especially before working on production or a live system.
+**superadvisor routes here when:** "guard mode", "full safety", "lock it down", "maximum safety", "guard against mistakes" — especially before working on production or a live system.
 
 ## Procedure
 1. Ask which directory to restrict edits to via AskUserQuestion, text input: "Guard mode: which directory should edits be restricted to? Destructive command warnings are always on. Files outside the chosen path will be blocked from editing."

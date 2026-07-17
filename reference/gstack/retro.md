@@ -5,7 +5,7 @@
 
 **Purpose:** Team-aware weekly engineering retrospective from git history — metrics, work patterns, and code-quality signals, with per-person praise + growth, persistent history, and trend tracking.
 
-**superadvisor routes here when:** "/retro", "weekly retro", "what did we ship", "engineering retrospective", end of a work week or sprint; Korean: "이번 주 회고", "주간 회고", "뭐 배포했는지 정리". Cross-project variant: "/retro global".
+**superadvisor routes here when:** "/retro", "weekly retro", "what did we ship", "engineering retrospective", end of a work week or sprint. Cross-project variant: "/retro global".
 
 **Arguments:** `/retro` (7d default), `/retro 24h`, `/retro 14d`, `/retro 30d`, `/retro compare [Nd]`, `/retro global [Nd]`. Windows are midnight-aligned; report in the user's local timezone (never set `TZ`). First arg `global` -> skip repo Steps 1-14, run the Global flow (needs no git repo).
 

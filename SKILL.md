@@ -27,15 +27,15 @@ Targets:
 | Request signal | Skill |
 |---|---|
 | General objective: build / fix / spec / prototype / code-review / architecture-improve / verify | `supergoal` |
-| UI · 화면 · 컴포넌트 · 디자인 시스템 · make it beautiful | `superdesign` |
-| Web QA · 브라우저 테스트 · 회귀 · side-effect 점검 | `superqa` |
-| PRD · 전략 · OKR · 로드맵 · 리서치 · GTM · 가격 · 포지셔닝 | `superpm` |
-| 마케팅 전략 · 카피 · 광고 · SEO · 캠페인 · 라이프사이클 | `supermarketer` |
-| 회사 문서: 보고서 · 제안서 · PPT · 엑셀 · 한글(hwpx) · PDF 변환 | `superoffice` |
-| 면접 준비 · 모의면접 · 답변 채점 · 시스템디자인/행동/코딩 면접 | `superinterview` |
-| 학습 정착 · 기억 · 5감 학습 · 게임화 | `superlearning` |
-| 튜터링 · 개념 설명 · 이해도 점검 · 초심자→숙달 | `supertutor` |
-| 보안 감사 · 펜테스트 · 취약점 트리아지 · 레드팀 · CTF · IR/포렌식 | `superhacker` |
+| UI · screens · components · design systems · make it beautiful | `superdesign` |
+| Web QA · browser testing · regression · side-effect checks | `superqa` |
+| PRD · strategy · OKR · roadmap · research · GTM · pricing · positioning | `superpm` |
+| marketing strategy · copy · ads · SEO · campaigns · lifecycle | `supermarketer` |
+| business docs: reports · proposals · PPT · Excel · HWP (hwpx) · PDF conversion | `superoffice` |
+| interview prep · mock interviews · answer grading · system-design/behavioral/coding | `superinterview` |
+| make learning stick · memory · five-sense learning · gamified | `superlearning` |
+| tutoring · concept explanation · comprehension checks · beginner→mastery | `supertutor` |
+| security audit · pentest · vuln triage · red team · CTF · IR/forensics | `superhacker` |
 
 Invoke with `Skill(skill="<name>")`. Each stays directly invocable (`/superqa`) too.
 
@@ -45,26 +45,26 @@ Definitions in `agents/<name>.md`; spawn mechanics in `reference/personas.md` (r
 
 | Request signal | Persona |
 |---|---|
-| 요구사항 분석 · 사전 기획 상담 | `analyst` |
-| 아키텍처 결정 · 설계/디버깅 자문 (read-only) | `architect` |
-| 코드 리뷰 (계획/표준 대비) | `code-reviewer` |
-| 작업 계획 · 인터뷰형 기획 | `planner` |
-| 다관점 비평 · plan/code 크리틱 | `critic` |
-| 디버깅 · 근본원인 · 스택트레이스 · 회귀 격리 | `debugger` |
-| 인과 추적 (경쟁 가설 · 증거 원장) | `tracer` |
-| UI/UX 구현 | `designer` |
-| 구현 실행 (focused executor) | `executor` |
-| 코드/파일 탐색 | `explore` |
-| git 원자적 커밋 · rebase · history | `git-master` |
-| CLI 테스트 (tmux 세션) | `qa-tester` |
-| 데이터 분석 · 리서치 실행 | `scientist` |
-| 보안 취약점 탐지 (OWASP · secrets) | `security-reviewer` |
-| 테스트 전략 · 통합/e2e · flaky 강화 | `test-engineer` |
-| 검증 전략 · 증거 기반 완료 체크 | `verifier` |
-| 문서 작성 (README · API docs) | `writer` |
-| 외부 문서 · 레퍼런스 조사 | `document-specialist` |
-| 코드 단순화 · 정리 | `code-simplifier` |
-| Stitch 디자인 · design-to-code | `stitch-kit` |
+| requirements analysis · pre-planning consult | `analyst` |
+| architecture decisions · design/debugging advisory (read-only) | `architect` |
+| code review (against plan/standards) | `code-reviewer` |
+| work planning · interview-style planning | `planner` |
+| multi-perspective critique · plan/code critic | `critic` |
+| debugging · root cause · stack traces · regression isolation | `debugger` |
+| causal tracing (competing hypotheses · evidence ledger) | `tracer` |
+| UI/UX implementation | `designer` |
+| implementation (focused executor) | `executor` |
+| code/file exploration | `explore` |
+| git atomic commits · rebase · history | `git-master` |
+| CLI testing (tmux sessions) | `qa-tester` |
+| data analysis · research execution | `scientist` |
+| security vuln detection (OWASP · secrets) | `security-reviewer` |
+| test strategy · integration/e2e · flaky hardening | `test-engineer` |
+| verification strategy · evidence-based completion checks | `verifier` |
+| docs writing (README · API docs) | `writer` |
+| external docs · reference research | `document-specialist` |
+| code simplification · cleanup | `code-simplifier` |
+| Stitch design · design-to-code | `stitch-kit` |
 
 ## C. gstack adapters — read reference/gstack/<name>.md
 
@@ -72,17 +72,17 @@ Faithful thin adapters distilled from garrytan/gstack (MIT). Read the file, then
 
 | Request signal | Adapter |
 |---|---|
-| 테스트 후 푸시 · PR 오픈 · sync main | `reference/gstack/ship.md` |
-| PR 머지 → CI 대기 → 프로덕션 헬스 확인 | `reference/gstack/land-and-deploy.md` |
-| 배포 후 콘솔 에러 · 회귀 모니터링 루프 | `reference/gstack/canary.md` |
-| 새 아이디어 · 6가지 강제질문 · 제품 재구성 | `reference/gstack/office-hours.md` |
-| 문제 재정의 · 10-star 제품 찾기 | `reference/gstack/plan-ceo-review.md` |
-| 파괴적 명령(rm -rf · DROP · force-push) 사전 경고 | `reference/gstack/careful.md` |
-| 편집을 한 디렉터리로 제한 | `reference/gstack/freeze.md` |
-| careful + freeze 결합 | `reference/gstack/guard.md` |
-| 배포된 것에 맞춰 문서 갱신 | `reference/gstack/document-release.md` |
-| 누락 문서 생성 (Diataxis) | `reference/gstack/document-generate.md` |
-| 주간 회고 · retro | `reference/gstack/retro.md` |
+| test then push · open PR · sync main | `reference/gstack/ship.md` |
+| merge PR → wait CI → verify prod health | `reference/gstack/land-and-deploy.md` |
+| post-deploy console-error · regression monitoring loop | `reference/gstack/canary.md` |
+| new idea · six forcing questions · product reframe | `reference/gstack/office-hours.md` |
+| reframe the problem · find the 10-star product | `reference/gstack/plan-ceo-review.md` |
+| warn before destructive commands (rm -rf · DROP · force-push) | `reference/gstack/careful.md` |
+| restrict edits to one directory | `reference/gstack/freeze.md` |
+| careful + freeze combined | `reference/gstack/guard.md` |
+| sync docs to what shipped | `reference/gstack/document-release.md` |
+| generate missing docs (Diataxis) | `reference/gstack/document-generate.md` |
+| weekly retro | `reference/gstack/retro.md` |
 
 ## Reference map (load only what the route needs)
 

@@ -5,7 +5,7 @@
 
 **Purpose:** Generate missing documentation from scratch for a feature, module, or whole project using the Diataxis framework (tutorial / how-to / reference / explanation). Standalone, or called by `/document-release` to fill flagged gaps.
 
-**superadvisor routes here when:** "write docs", "generate documentation", "document this feature", "create a tutorial", "write a how-to", "explain this module", "docs for this project"; Korean: "문서 작성해줘", "문서 생성", "튜토리얼 만들어줘", "이 모듈 설명 문서".
+**superadvisor routes here when:** "write docs", "generate documentation", "document this feature", "create a tutorial", "write a how-to", "explain this module", "docs for this project".
 
 Philosophy: research the whole, then write the parts — survey the full code surface before writing any doc.
 

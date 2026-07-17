@@ -5,7 +5,7 @@
 
 **Purpose:** Post-deploy monitoring loop. Watch the live app for console errors, performance regressions, and page failures via the browse daemon (`$B`); screenshot and compare against pre-deploy baselines; alert on anomalies.
 
-**superadvisor routes here when:** "monitor deploy", "canary", "post-deploy check", "watch production", "verify deploy". Korean: "배포 후 모니터링", "카나리 체크", "프로덕션 감시", "배포 확인". Args: `/canary <url> [--duration 5m] [--baseline] [--pages /,/dashboard] [--quick]`.
+**superadvisor routes here when:** "monitor deploy", "canary", "post-deploy check", "watch production", "verify deploy". Args: `/canary <url> [--duration 5m] [--baseline] [--pages /,/dashboard] [--quick]`.
 
 ## Procedure
 Start monitoring within 30s of invocation; default duration 10 min.

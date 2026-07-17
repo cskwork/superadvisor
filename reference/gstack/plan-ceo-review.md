@@ -5,7 +5,7 @@
 
 **Purpose:** CEO/founder-mode plan review. Rethink the problem, find the 10-star product, challenge premises, expand scope only when it makes a better product. Review only — no code changes.
 
-**superadvisor routes here when:** "think bigger", "expand scope", "strategy review", "rethink this plan", "is this ambitious enough", "크게 생각해줘", "스코프 넓혀줘", "전략 리뷰" — or proactively when the user questions a plan's scope or ambition.
+**superadvisor routes here when:** "think bigger", "expand scope", "strategy review", "rethink this plan", "is this ambitious enough" — or proactively when the user questions a plan's scope or ambition.
 
 ## Procedure
 1. **Pre-review system audit (before Step 0).** git log/diff/stash, TODO/FIXME scan, recently-touched files; read CLAUDE.md, TODOS.md, architecture docs. Check for an `/office-hours` design doc and a CEO handoff note; if no design doc, offer to run `/office-hours` first. Detect frontend/UI scope, run retrospective + landscape checks.
