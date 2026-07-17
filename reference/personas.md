@@ -11,7 +11,7 @@ Agent(subagent_type="code-reviewer", prompt="<task>")
 ```
 These stay registered because the user's global rules (`~/.claude/rules/common/agents.md`, `security.md`) invoke them by name.
 
-**Router-internal** — the other 16 live only here (de-registered to keep the session lean). The Agent tool cannot resolve them by name, so pass the definition as the prompt prefix:
+**Router-internal** — the other 16 are dispatched from here by passing the definition as the prompt prefix:
 ```
 persona = Read("agents/<name>.md")            # strip YAML frontmatter, keep the body
 Agent(subagent_type="general-purpose",

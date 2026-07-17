@@ -1,6 +1,6 @@
 # superadvisor
 
-A single front-door **router skill** for Danny's toolkit. You invoke one skill; it reads the request, picks the single best target, loads only that, and hands off. Modeled on [garrytan/gstack](https://github.com/garrytan/gstack)'s router pattern and cskwork's `supergoal` ("`SKILL.md` is the router; `reference/` carries procedure; load only what the phase needs").
+A single front-door **router skill** for the toolkit. You invoke one skill; it reads the request, picks the single best target, loads only that, and hands off. Modeled on [garrytan/gstack](https://github.com/garrytan/gstack)'s router pattern and cskwork's `supergoal` ("`SKILL.md` is the router; `reference/` carries procedure; load only what the phase needs").
 
 ## Why
 
@@ -31,7 +31,7 @@ superadvisor/
 ## Registration model (Hybrid)
 
 - **super\*** skills stay registered — `/superqa` etc. still work directly. The router dispatches to them via the Skill tool.
-- **Personas**: `architect`, `code-reviewer`, `planner`, `security-reviewer` stay in `~/.claude/agents/` (global rules call them by name). The other 16 live only here and are spawned by passing their file body as the subagent prompt. See `reference/personas.md`.
+- **Personas**: `architect`, `code-reviewer`, `planner`, `security-reviewer` stay in `~/.claude/agents/` (global rules call them by name). The other 16 are dispatched from here by passing their file body as the subagent prompt; de-register them from `~/.claude/agents/` to realize the context saving. See `reference/personas.md`.
 - **gstack** skills are not installed or registered — they are distilled into thin adapters the router reads on demand.
 
 ## Install

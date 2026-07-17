@@ -1,27 +1,26 @@
 ---
 name: superadvisor
-description: Single front-door router for Danny's toolkit. Dispatches one request to the best super* skill, specialist persona, or adapted gstack workflow, then loads only that. Use when you want one entry point or aren't sure which tool fits — build/fix/spec/prototype/review/QA/debug a feature; UI & design systems; PRD/strategy/roadmap/pricing; marketing copy/campaigns; business docs (보고서·PPT·엑셀·한글·PDF); interview prep; teaching/learning; security audit/pentest; deploy/ship/canary; product reframing; destructive-command safety; docs & retro. Invoke as "/superadvisor <request>" or just describe the task.
+description: Router that dispatches a request to the single best specialist — a super* skill, a persona, or a gstack workflow — and loads only that. Reach for it as the default entry point when a task is substantial, spans domains, or no single skill clearly owns it.
 ---
 
-# About
+# superadvisor — router
 
-`superadvisor` is a **router**, not a worker. Its one job: read the request, pick the **single best target**, load only that, and hand off. `SKILL.md` holds routing rules only; the procedures live in the targets themselves. Load nothing you are not routing to.
+Read the request, pick the **single best target**, load only that, hand off. This file is the index; the procedure lives in the target. Load nothing you are not routing to.
 
-Three target classes:
-- **super\*** skills — full gated workflows (registered; invoke via the **Skill tool**).
-- **Personas** — one specialist, one job (spawn via the **Agent tool**; definitions in `agents/*.md`).
-- **gstack adapters** — specific workflows the super\* suite lacks (read `reference/gstack/<name>.md`).
+Targets:
+- **super\*** skill — a full gated workflow (**Skill tool**).
+- **persona** — one specialist, one job (**Agent tool**; `agents/<name>.md`).
+- **gstack adapter** — a workflow the super\* suite lacks (read `reference/gstack/<name>.md`).
 
-## Dispatch (do this every time)
+## Route
 
-1. **Defer to explicit invocation.** If the user already invoked a specific `/super*` skill, or a specific skill's own trigger clearly fires, let that skill run — do **not** double-route. `superadvisor` is for a single entry point or an ambiguous / cross-domain request.
-2. **Match the request to one target** using the tables below.
-3. **Precedence when signals overlap:**
-   - Substantial multi-step objective (build / fix end-to-end / spec / prototype / verify a whole thing) → **super\*** workflow (they carry the gates).
-   - One atomic specialist task, or a building block for a larger run → **persona**.
-   - Deploy · product-reframing · destructive-command safety · docs/retro (not covered by super\*) → **gstack adapter**.
-4. **Bias: when in doubt, invoke the specific target.** A wrong route is cheaper to correct than answering inline and skipping a real workflow's checklist.
-5. State the route in one line before handing off, e.g. `route: superqa (web QA)` or `route: persona/debugger`.
+1. Match the request to one target in the tables below.
+2. Precedence when signals overlap:
+   - whole multi-step objective (build / fix end-to-end / spec / prototype / verify) → **super\*** (it owns the gates)
+   - one atomic specialist step, or a block of a larger run → **persona**
+   - deploy · product-reframe · destructive-command safety · docs/retro → **gstack adapter**
+3. When in doubt, invoke the specific target — a wrong route is cheaper than skipping a real workflow's gates. If nothing fits, answer directly.
+4. Announce the choice as `route: <target>`, then hand off. Route one primary target per turn; name any follow-up instead of preloading it.
 
 ## A. super* skills — invoke via Skill tool
 
@@ -38,13 +37,11 @@ Three target classes:
 | 튜터링 · 개념 설명 · 이해도 점검 · 초심자→숙달 | `supertutor` |
 | 보안 감사 · 펜테스트 · 취약점 트리아지 · 레드팀 · CTF · IR/포렌식 | `superhacker` |
 
-Invocation: `Skill(skill="<name>")`. These stay individually invocable (`/superqa` etc.) — route here only when the user came through `superadvisor`.
+Invoke with `Skill(skill="<name>")`. Each stays directly invocable (`/superqa`) too.
 
 ## B. Personas — spawn via Agent tool
 
-Definitions in `agents/<name>.md`. Spawning depends on registration (see `reference/personas.md`):
-- **Registered** (`architect`, `code-reviewer`, `planner`, `security-reviewer`): `Agent(subagent_type="<name>")`.
-- **Router-internal** (all others): spawn `Agent(subagent_type="general-purpose")` with the file's contents as the prompt prefix, then the task.
+Definitions in `agents/<name>.md`; spawn mechanics in `reference/personas.md` (registered names use `subagent_type`, the rest pass the file body as the prompt).
 
 | Request signal | Persona |
 |---|---|
@@ -94,5 +91,3 @@ Faithful thin adapters distilled from garrytan/gstack (MIT). Read the file, then
 | `reference/personas.md` | routing to a persona — spawn mechanics (registered vs file-based), model/tool notes |
 | `reference/super-skills.md` | routing to a super\* skill — domain boundaries, overlap tie-breaks |
 | `reference/gstack/<name>.md` | routing to a gstack workflow — that adapter only |
-
-If a request splits across classes (e.g. "design **and** ship it"), route the primary objective now and name the follow-up target in your handoff line — do not preload both.

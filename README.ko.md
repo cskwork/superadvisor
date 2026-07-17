@@ -1,6 +1,6 @@
 # superadvisor
 
-Danny의 툴킷을 위한 **단일 진입점 라우터 스킬**. 스킬 하나만 부르면 요청을 읽고 가장 적합한 대상 하나를 골라, **그 대상만 로드**한 뒤 넘긴다. [garrytan/gstack](https://github.com/garrytan/gstack)의 라우터 패턴과 cskwork `supergoal`의 방식("`SKILL.md`가 라우터, `reference/`가 절차, 단계에 필요한 것만 로드")을 따른다.
+**단일 진입점 라우터 스킬**. 스킬 하나만 부르면 요청을 읽고 가장 적합한 대상 하나를 골라, **그 대상만 로드**한 뒤 넘긴다. [garrytan/gstack](https://github.com/garrytan/gstack)의 라우터 패턴과 cskwork `supergoal`의 방식("`SKILL.md`가 라우터, `reference/`가 절차, 단계에 필요한 것만 로드")을 따른다.
 
 ## 왜
 
@@ -31,7 +31,7 @@ superadvisor/
 ## 등록 모델 (Hybrid)
 
 - **super\*** 스킬은 등록 유지 — `/superqa` 등 직접 호출 계속 가능. 라우터는 Skill 툴로 디스패치.
-- **페르소나**: `architect`, `code-reviewer`, `planner`, `security-reviewer`는 `~/.claude/agents/`에 유지(전역 규칙이 이름으로 호출). 나머지 16개는 여기에만 두고 파일 본문을 서브에이전트 프롬프트로 넘겨 스폰. `reference/personas.md` 참고.
+- **페르소나**: `architect`, `code-reviewer`, `planner`, `security-reviewer`는 `~/.claude/agents/`에 유지(전역 규칙이 이름으로 호출). 나머지 16개는 파일 본문을 서브에이전트 프롬프트로 넘겨 여기서 스폰; 컨텍스트 절감을 실제로 얻으려면 `~/.claude/agents/`에서 등록 해제. `reference/personas.md` 참고.
 - **gstack** 스킬은 설치·등록하지 않음 — 얇은 어댑터로 증류해 라우터가 필요 시 read.
 
 ## 설치
