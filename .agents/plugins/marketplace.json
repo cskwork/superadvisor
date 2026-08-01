@@ -1,0 +1,21 @@
+{
+  "name": "superadvisor",
+  "interface": {
+    "displayName": "Superadvisor"
+  },
+  "plugins": [
+    {
+      "name": "superadvisor",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/cskwork/superadvisor.git",
+        "ref": "main"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
