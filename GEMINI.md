@@ -1,0 +1,4 @@
+# superadvisor
+
+@./SKILL.md
+

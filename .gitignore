@@ -1,5 +1,6 @@
-log/
 .DS_Store
+__pycache__/
+*.py[cod]
+evals/results/
 node_modules/
-*.log
-marketing/
+dist/

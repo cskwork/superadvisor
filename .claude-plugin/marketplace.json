@@ -1,0 +1,16 @@
+{
+  "$schema": "https://www.schemastore.org/claude-code-marketplace.json",
+  "name": "superadvisor",
+  "description": "Router that dispatches a request to the single best specialist — a super* skill, a persona, or a gstack workflow — and l",
+  "owner": {
+    "name": "cskwork"
+  },
+  "plugins": [
+    {
+      "name": "superadvisor",
+      "description": "Router that dispatches a request to the single best specialist — a super* skill, a persona, or a gstack workflow — and l",
+      "source": "./",
+      "category": "productivity"
+    }
+  ]
+}
