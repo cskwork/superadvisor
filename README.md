@@ -1,3 +1,5 @@
+<p align="center"><img src="logo.png" width="120" alt="logo" /></p>
+
 # superadvisor
 
 **Live:** [cskwork.github.io/superadvisor](https://cskwork.github.io/superadvisor/)
