@@ -1,4 +1,4 @@
 # superadvisor
 
-@./SKILL.md
+@./skills/superadvisor/SKILL.md
 
