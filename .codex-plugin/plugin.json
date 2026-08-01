@@ -1,7 +1,7 @@
 {
   "name": "superadvisor",
   "version": "0.1.0",
-  "description": "Router that dispatches a request to the single best specialist — a super* skill, a persona, or a gstack workflow — and loads only that. Reach for it as the default entry point when a task is substantial, spans domains, or no single skill clearly owns it.",
+  "description": "Router that dispatches a request to the single best specialist — a super* skill, a persona, or a gstack workflow — and...",
   "author": {
     "name": "cskwork",
     "url": "https://github.com/cskwork"
@@ -19,7 +19,7 @@
   "interface": {
     "displayName": "Superadvisor",
     "shortDescription": "Router that dispatches a request to the single best specialist — a super* skill,",
-    "longDescription": "Router that dispatches a request to the single best specialist — a super* skill, a persona, or a gstack workflow — and loads only that. Reach for it as the default entry point when a task is substantial, spans domains, or no single skill clearly owns it.",
+    "longDescription": "Router that dispatches a request to the single best specialist — a super* skill, a persona, or a gstack workflow — and...",
     "developerName": "cskwork",
     "category": "Productivity",
     "capabilities": [
