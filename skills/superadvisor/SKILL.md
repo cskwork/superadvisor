@@ -1,6 +1,6 @@
 ---
 name: superadvisor
-description: Router that dispatches a request to the single best specialist — a super* skill, a persona, or a gstack workflow — and loads only that. Reach for it as the default entry point when a task is substantial, spans domains, or no single skill clearly owns it.
+description: Router to the best super* skill, persona, or gstack workflow. Use when a task spans domains or no skill owns it.
 ---
 
 # superadvisor — router

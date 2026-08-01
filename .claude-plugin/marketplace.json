@@ -1,14 +1,14 @@
 {
   "$schema": "https://www.schemastore.org/claude-code-marketplace.json",
   "name": "superadvisor",
-  "description": "Router that dispatches a request to the single best specialist — a super* skill, a persona, or a gstack workflow — and l",
+  "description": "Router to the best super* skill, persona, or gstack workflow. Use when a task spans domains or no skill owns it.",
   "owner": {
     "name": "cskwork"
   },
   "plugins": [
     {
       "name": "superadvisor",
-      "description": "Router that dispatches a request to the single best specialist — a super* skill, a persona, or a gstack workflow — and l",
+      "description": "Router to the best super* skill, persona, or gstack workflow. Use when a task spans domains or no skill owns it.",
       "source": "./",
       "category": "productivity"
     }
