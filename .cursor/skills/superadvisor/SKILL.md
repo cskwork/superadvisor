@@ -1,11 +1,11 @@
 ---
 name: superadvisor
-description: Router that dispatches a request to the single best specialist — a super* skill, a persona, or a gstack workflow — and loads only that. Reach for it as the default entry point when a task is substantial, spans domains, or no single skill clearly owns it.
+description: Router to the best super* skill, persona, or gstack workflow. Use when a task spans domains or no skill owns it.
 ---
 
 # superadvisor — router
 
-Read the request, pick the **single best target**, load only that, hand off. This file is the index; the procedure lives in the target. Load nothing you are not routing to.
+Read the request, pick the **single best target**, load only that, hand off. This file is the index; the procedure lives in the target.
 
 Targets:
 - **super\*** skill — a full gated workflow (**Skill tool**).
@@ -37,11 +37,11 @@ Targets:
 | tutoring · concept explanation · comprehension checks · beginner→mastery | `supertutor` |
 | security audit · pentest · vuln triage · red team · CTF · IR/forensics | `superhacker` |
 
-Invoke with `Skill(skill="<name>")`. Each stays directly invocable (`/superqa`) too.
+Invoke with `Skill(skill="<name>")`. When two skills both fit, read `reference/super-skills.md` for domain boundaries and overlap tie-breaks.
 
 ## B. Personas — spawn via Agent tool
 
-Definitions in `agents/<name>.md`; spawn mechanics in `reference/personas.md` (registered names use `subagent_type`, the rest pass the file body as the prompt).
+Definitions in `agents/<name>.md`. Read `reference/personas.md` before spawning — registered names use `subagent_type`, the rest pass the file body as the prompt.
 
 | Request signal | Persona |
 |---|---|
@@ -83,11 +83,3 @@ Faithful thin adapters distilled from garrytan/gstack (MIT). Read the file, then
 | sync docs to what shipped | `reference/gstack/document-release.md` |
 | generate missing docs (Diataxis) | `reference/gstack/document-generate.md` |
 | weekly retro | `reference/gstack/retro.md` |
-
-## Reference map (load only what the route needs)
-
-| Read this | When |
-|---|---|
-| `reference/personas.md` | routing to a persona — spawn mechanics (registered vs file-based), model/tool notes |
-| `reference/super-skills.md` | routing to a super\* skill — domain boundaries, overlap tie-breaks |
-| `reference/gstack/<name>.md` | routing to a gstack workflow — that adapter only |
