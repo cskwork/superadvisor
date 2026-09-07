@@ -19,7 +19,7 @@ Targets:
    - whole multi-step objective (build / fix end-to-end / spec / prototype / verify) → **super\*** (it owns the gates)
    - one atomic specialist step, or a block of a larger run → **persona**
    - deploy · product-reframe · destructive-command safety · docs/retro → **gstack adapter**
-3. When in doubt, invoke the specific target — a wrong route is cheaper than skipping a real workflow's gates. If nothing fits, answer directly.
+3. Respect an explicitly chosen target. Otherwise choose by the requested deliverable and the target's scope; clarify only when competing routes would materially change the work. If nothing fits, answer directly.
 4. Announce the choice as `route: <target>`, then hand off. Route one primary target per turn; name any follow-up instead of preloading it.
 
 ## A. super* skills — invoke via Skill tool
@@ -37,7 +37,7 @@ Targets:
 | tutoring · concept explanation · comprehension checks · beginner→mastery | `supertutor` |
 | security audit · pentest · vuln triage · red team · CTF · IR/forensics | `superhacker` |
 
-Invoke with `Skill(skill="<name>")`. When two skills both fit, read `reference/super-skills.md` for domain boundaries and overlap tie-breaks.
+Invoke with `Skill(skill="<name>")` when available, or use the host's equivalent skill loader. Confirm the target is installed before handing off; a table entry is not proof of availability. When two skills both fit, read `reference/super-skills.md` for domain boundaries and overlap tie-breaks.
 
 ## B. Personas — spawn via Agent tool
 
