@@ -41,7 +41,7 @@ superadvisor/
 ## Install
 
 ```bash
-ln -s /Users/danny/Documents/PARA/Resource/superadvisor ~/.claude/skills/superadvisor
+ln -s ~/Documents/PARA/Resource/superadvisor ~/.claude/skills/superadvisor
 ```
 
 ## Use
